@@ -56,3 +56,18 @@ function startReviewRotation() {
 }
 
 startReviewRotation();
+
+setTimeout(() => {
+    const branding = document.querySelector('.tawk-branding');
+    if (branding) {
+        branding.remove();
+    }
+}, 3000);
+
+const observer = new MutationObserver(() => {
+    const branding = document.querySelector('.tawk-branding');
+    if (branding) {
+        branding.remove();
+    }
+});
+observer.observe(document.body, { childList: true, subtree: true });

@@ -1,3 +1,4 @@
+
 const menuToggle = document.getElementById('menu-toggle');
 const navLinks = document.getElementById('nav-links');
 
@@ -15,7 +16,7 @@ const reviews = [
   {
     name: "Monir Ali",
     img: "images/monir.jpg",
-    text: "অনেক সময় বাঁচিয়েছে। ঘরে বসেই প্রেসক্রিপশন দিয়ে ওষুধ পেয়েছি। খুবই সহজ আর ঝামেলাহীন। এবং ডেলিভারি ম্যানের আচারণ ছিলো অসাধারণ ভালো, খুশি হয়ে আমি এক্সট্রা টিপ দিয়েছি ডেলিভারি ম্যানকে।",
+    text: "অনেক সময় বাঁচিয়েছে। ঘরে বসেই প্রেসক্রিপশন দিয়ে ওষুধ পেয়েছি। খুবই সহজ আর ঝামেলাহীন। এবং ডেলিভারি ম্যানের আচরণ ছিলো অসাধারণ ভালো, খুশি হয়ে আমি এক্সট্রা টিপ দিয়েছি ডেলিভারি ম্যানকে।",
     stars: "★★★★★"
   },
   {
@@ -52,22 +53,23 @@ function startReviewRotation() {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % reviews.length;
     showReview(currentIndex);
-  }, 10000);
+  }, 10000); 
 }
 
 startReviewRotation();
 
+
 setTimeout(() => {
-    const branding = document.querySelector('.tawk-branding');
-    if (branding) {
-        branding.remove();
+    const tawkWidget = document.getElementById('drmj82tktdvk1752981226451');
+    if (tawkWidget) {
+        tawkWidget.remove();
     }
 }, 3000);
 
 const observer = new MutationObserver(() => {
-    const branding = document.querySelector('.tawk-branding');
-    if (branding) {
-        branding.remove();
+    const tawkWidget = document.getElementById('drmj82tktdvk1752981226451');
+    if (tawkWidget) {
+        tawkWidget.remove();
     }
 });
 observer.observe(document.body, { childList: true, subtree: true });
